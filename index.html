@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ODDJOB — The Spy Music Experience</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Josefin+Sans:wght@100;300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #e8cd80;
+    --gold-dim: #6b5520;
+    --black: #050508;
+    --dark: #0d0d14;
+    --panel: #12121c;
+    --text: #c8c8d8;
+    --text-dim: #666680;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    cursor: crosshair;
+    overflow-x: hidden;
+  }
+
+  /* ── GUN BARREL INTRO ── */
+  #barrel {
+    position: fixed; inset: 0; z-index: 9999;
+    background: #000;
+    display: flex; align-items: center; justify-content: center;
+    animation: barrelFade 0.6s ease 2.4s forwards;
+  }
+  #barrel svg { width: min(340px, 80vw); }
+  .barrel-ring {
+    transform-origin: 50% 50%;
+    animation: barrelSpin 1.8s cubic-bezier(.4,0,.2,1) forwards;
+  }
+  .barrel-fill {
+    transform-origin: 50% 50%;
+    animation: barrelFill 1.8s cubic-bezier(.4,0,.2,1) forwards;
+  }
+  @keyframes barrelSpin {
+    0%   { transform: rotate(0deg) scale(0); opacity:0; }
+    20%  { opacity:1; }
+    100% { transform: rotate(720deg) scale(1); opacity:1; }
+  }
+  @keyframes barrelFill {
+    0%   { transform: scale(0); }
+    60%  { transform: scale(0); }
+    100% { transform: scale(1); }
+  }
+  @keyframes barrelFade {
+    to { opacity:0; pointer-events:none; }
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 3rem;
+    background: linear-gradient(to bottom, rgba(5,5,8,.95) 60%, transparent);
+    border-bottom: 1px solid rgba(201,168,76,.12);
+  }
+  .nav-logo {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: .25em;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--text-dim); font-weight: 400; font-size: .7em; letter-spacing: .5em; display: block; margin-top: -4px; }
+  nav ul { list-style: none; display: flex; gap: 2.5rem; }
+  nav ul a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .72rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color .3s;
+  }
+  nav ul a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  #hero {
+    height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    text-align: center; padding: 0 2rem;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 50% 110%, rgba(201,168,76,.08) 0%, transparent 70%),
+      radial-gradient(ellipse 100% 80% at 50% -10%, rgba(201,168,76,.05) 0%, transparent 60%);
+  }
+  /* Animated concentric circles */
+  .hero-rings {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;
+  }
+  .ring {
+    position: absolute; border-radius: 50%;
+    border: 1px solid rgba(201,168,76,.06);
+    animation: ringPulse 6s ease-in-out infinite;
+  }
+  .ring:nth-child(1) { width: 300px; height: 300px; animation-delay: 0s; }
+  .ring:nth-child(2) { width: 500px; height: 500px; animation-delay: .8s; }
+  .ring:nth-child(3) { width: 700px; height: 700px; animation-delay: 1.6s; }
+  .ring:nth-child(4) { width: 900px; height: 900px; animation-delay: 2.4s; }
+  @keyframes ringPulse {
+    0%, 100% { opacity: .3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.02); }
+  }
+
+  .hero-eyebrow {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .7rem;
+    letter-spacing: .6em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp .8s ease 2.8s forwards;
+  }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(4rem, 14vw, 10rem);
+    font-weight: 900;
+    line-height: .9;
+    letter-spacing: .08em;
+    color: #fff;
+    text-shadow: 0 0 80px rgba(201,168,76,.3);
+    opacity: 0;
+    animation: fadeUp .9s ease 3s forwards;
+  }
+  h1 em {
+    display: block;
+    font-style: normal;
+    -webkit-text-stroke: 1px var(--gold);
+    color: transparent;
+    font-size: .55em;
+    letter-spacing: .3em;
+    margin-top: .3em;
+  }
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--text-dim);
+    margin-top: 2rem;
+    max-width: 500px;
+    opacity: 0;
+    animation: fadeUp .8s ease 3.2s forwards;
+  }
+  .hero-cta {
+    margin-top: 3rem;
+    display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center;
+    opacity: 0;
+    animation: fadeUp .8s ease 3.4s forwards;
+  }
+  .btn {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .72rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: .9rem 2.4rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+    cursor: crosshair;
+    transition: background .3s, color .3s, box-shadow .3s;
+    position: relative; overflow: hidden;
+  }
+  .btn::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: var(--gold);
+    transform: translateX(-101%);
+    transition: transform .35s cubic-bezier(.4,0,.2,1);
+    z-index: 0;
+  }
+  .btn:hover::before { transform: translateX(0); }
+  .btn:hover { color: var(--black); }
+  .btn span { position: relative; z-index: 1; }
+  .btn-ghost { border-color: rgba(201,168,76,.3); color: var(--text-dim); }
+  .btn-ghost:hover { color: var(--black); }
+  .btn-ghost::before { background: rgba(201,168,76,.6); }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(24px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  .scroll-hint {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    opacity: 0; animation: fadeUp .6s ease 4s forwards;
+  }
+  .scroll-hint span {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .6rem; letter-spacing: .4em; text-transform: uppercase; color: var(--text-dim);
+  }
+  .scroll-line {
+    width: 1px; height: 50px; background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollDrop 2s ease infinite;
+  }
+  @keyframes scrollDrop {
+    0%, 100% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 7rem 2rem; }
+  .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .65rem;
+    letter-spacing: .5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--gold-dim); }
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+  p { line-height: 1.8; color: var(--text); font-size: 1.05rem; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--dark); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+  .about-stat {
+    border-left: 2px solid var(--gold);
+    padding: .8rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .about-stat-num {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .about-stat-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .65rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: .3rem;
+  }
+  .setlist {
+    background: var(--panel);
+    border: 1px solid rgba(201,168,76,.12);
+    padding: 2rem;
+  }
+  .setlist h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .7rem;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+  .setlist ul { list-style: none; }
+  .setlist li {
+    padding: .55rem 0;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    font-size: .95rem;
+    color: var(--text);
+    display: flex; align-items: center; gap: .8rem;
+  }
+  .setlist li::before { content: '◆'; color: var(--gold-dim); font-size: .5rem; }
+  .setlist li:last-child { border-bottom: none; }
+
+  /* ── MEDIA ── */
+  #media { background: var(--black); }
+  .media-placeholder {
+    position: relative;
+    background: var(--panel);
+    border: 1px solid rgba(201,168,76,.15);
+    aspect-ratio: 16/9;
+    max-width: 700px;
+    margin: 3rem auto 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 1rem; cursor: pointer; overflow: hidden;
+  }
+  .media-placeholder::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,.04), transparent 70%);
+  }
+  .play-btn {
+    width: 70px; height: 70px; border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    transition: background .3s, transform .3s;
+  }
+  .media-placeholder:hover .play-btn { background: rgba(201,168,76,.15); transform: scale(1.1); }
+  .play-btn svg { fill: var(--gold); width: 24px; height: 24px; margin-left: 4px; }
+  .media-placeholder p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .7rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    position: relative;
+  }
+  .media-note {
+    text-align: center;
+    font-style: italic;
+    color: var(--text-dim);
+    font-size: .85rem;
+    margin-top: 1rem;
+  }
+
+  /* ── BOOKING FORM ── */
+  #book {
+    background: var(--dark);
+    position: relative; overflow: hidden;
+  }
+  #book::before {
+    content: 'ODDJOB';
+    position: absolute; right: -2rem; top: 50%; transform: translateY(-50%) rotate(90deg);
+    font-family: 'Cinzel', serif;
+    font-size: 12rem;
+    font-weight: 900;
+    color: rgba(201,168,76,.02);
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: .2em;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+  .form-group { display: flex; flex-direction: column; gap: .5rem; }
+  .form-group.full { grid-column: 1 / -1; }
+  label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .62rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  input, textarea, select {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(201,168,76,.2);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    padding: .85rem 1rem;
+    outline: none;
+    transition: border-color .3s, background .3s;
+    width: 100%;
+    cursor: crosshair;
+  }
+  input::placeholder, textarea::placeholder { color: var(--text-dim); }
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--gold);
+    background: rgba(201,168,76,.04);
+  }
+  select option { background: var(--panel); }
+  textarea { resize: vertical; min-height: 130px; }
+  .form-submit { margin-top: 1.5rem; text-align: right; }
+  .btn-submit {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .72rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    padding: 1rem 3rem;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    cursor: crosshair;
+    font-weight: 600;
+    transition: background .3s, transform .2s;
+    position: relative; overflow: hidden;
+  }
+  .btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 3rem;
+    border: 1px solid var(--gold);
+    background: rgba(201,168,76,.04);
+  }
+  .form-success .check { font-size: 3rem; margin-bottom: 1rem; }
+  .form-success p { font-style: italic; color: var(--gold-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(201,168,76,.1);
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+  }
+  .footer-logo {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: .3em;
+    color: var(--gold);
+  }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .65rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color .3s;
+    display: flex; align-items: center; gap: .5rem;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .fb-icon { width: 16px; height: 16px; fill: currentColor; }
+  .copyright {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .6rem;
+    letter-spacing: .2em;
+    color: var(--text-dim);
+  }
+  .tagline {
+    font-style: italic;
+    font-size: .9rem;
+    color: var(--text-dim);
+  }
+
+  /* ── DIVIDER ── */
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { gap: 1.2rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: 1; }
+    #book::before { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- GUN BARREL INTRO -->
+<div id="barrel">
+  <svg viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="bg" cx="50%" cy="50%">
+        <stop offset="0%" stop-color="#1a1a00"/>
+        <stop offset="100%" stop-color="#000"/>
+      </radialGradient>
+    </defs>
+    <rect width="340" height="340" fill="url(#bg)"/>
+    <g class="barrel-ring">
+      <!-- Spiral rings -->
+      <circle cx="170" cy="170" r="160" fill="none" stroke="#c9a84c" stroke-width=".5" opacity=".3"/>
+      <circle cx="170" cy="170" r="130" fill="none" stroke="#c9a84c" stroke-width="1" opacity=".5"/>
+      <circle cx="170" cy="170" r="100" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity=".7"/>
+      <circle cx="170" cy="170" r="70"  fill="none" stroke="#c9a84c" stroke-width="2" opacity=".9"/>
+      <circle cx="170" cy="170" r="40"  fill="none" stroke="#c9a84c" stroke-width="3"/>
+      <!-- Sight lines -->
+      <line x1="170" y1="0"   x2="170" y2="130" stroke="#c9a84c" stroke-width=".8" opacity=".4"/>
+      <line x1="170" y1="210" x2="170" y2="340" stroke="#c9a84c" stroke-width=".8" opacity=".4"/>
+      <line x1="0"   y1="170" x2="130" y2="170" stroke="#c9a84c" stroke-width=".8" opacity=".4"/>
+      <line x1="210" y1="170" x2="340" y2="170" stroke="#c9a84c" stroke-width=".8" opacity=".4"/>
+    </g>
+    <circle class="barrel-fill" cx="170" cy="170" r="30" fill="#000"/>
+    <circle class="barrel-fill" cx="170" cy="170" r="10" fill="#c9a84c"/>
+  </svg>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">ODDJOB <span>Cover Band</span></a>
+  <ul>
+    <li><a href="#about">The Band</a></li>
+    <li><a href="#media">Listen</a></li>
+    <li><a href="#book">Book Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-rings">
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+  </div>
+  <p class="hero-eyebrow">Live Music · Spy Sounds · Classic Rock</p>
+  <h1>ODDJOB <em>The Band</em></h1>
+  <p class="hero-sub">Your license to rock. Secret agents of sound covering spy anthems, classic rock, and everything in between.</p>
+  <div class="hero-cta">
+    <a href="#book" class="btn"><span>Book a Mission</span></a>
+    <a href="#media" class="btn btn-ghost"><span>Hear Us Play</span></a>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">The Dossier</div>
+    <h2>We Don't Just Cover Songs.<br>We Own Them.</h2>
+    <div class="about-grid">
+      <div>
+        <p>Oddjob isn't your average cover band. We bring the full spy-cinematic experience to every stage — sultry brass, shimmering guitars, and the grooves that made the '70s legendary.</p>
+        <p style="margin-top:1.2rem">From the cool swagger of <em>"Secret Agent Man"</em> to the hard-rocking anthems that defined a decade, we read the room, play the crowd, and leave every venue wanting one more encore.</p>
+        <div style="margin-top: 2.5rem">
+          <div class="about-stat">
+            <div class="about-stat-num">∞</div>
+            <div class="about-stat-label">Songs in the repertoire</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">0</div>
+            <div class="about-stat-label">Boring shows. Ever.</div>
+          </div>
+        </div>
+      </div>
+      <div class="setlist">
+        <h3>Mission Highlights</h3>
+        <ul>
+          <li>Secret Agent Man</li>
+          <li>James Bond Theme</li>
+          <li>For Your Eyes Only</li>
+          <li>Fortunate Son</li>
+          <li>Born to Run</li>
+          <li>Roxanne</li>
+          <li>Hotel California</li>
+          <li>All Right Now</li>
+          <li>Smoke on the Water</li>
+          <li style="color: var(--text-dim); font-style: italic; font-size:.85rem">… and many more</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA -->
+<section id="media">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-label" style="justify-content:center">Intercept Transmission</div>
+    <h2>Hear the Mission</h2>
+    <p>Turn up the volume. Orders from HQ.</p>
+    <div class="media-placeholder" onclick="this.innerHTML='<p style=\'font-family:Josefin Sans,sans-serif;font-size:.8rem;letter-spacing:.2em;color:#c9a84c;padding:2rem\'>📡 Sample coming soon — check back after our first recording session!</p>'">
+      <div class="play-btn">
+        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+      <p>Play Sample · Coming Soon</p>
+    </div>
+    <p class="media-note">Video / audio embed will go here — drop in a YouTube, SoundCloud, or Bandcamp link when you're ready.</p>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- BOOKING FORM -->
+<section id="book">
+  <div class="section-inner">
+    <div class="section-label">Initiate Contact</div>
+    <h2>Book Your Mission</h2>
+    <p>Fill out the dossier below and we'll be in touch within 24 hours. Perfect for bars, private events, weddings, corporate functions, and anything that needs a soundtrack.</p>
+
+    <div id="booking-form">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Agent Name">
+        </div>
+        <div class="form-group">
+          <label for="venue">Venue / Organization</label>
+          <input type="text" id="venue" placeholder="The Golden Eye Lounge">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="contact@venue.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" placeholder="(555) 007-0007">
+        </div>
+        <div class="form-group">
+          <label for="date">Event Date</label>
+          <input type="date" id="date">
+        </div>
+        <div class="form-group">
+          <label for="type">Event Type</label>
+          <select id="type">
+            <option value="" disabled selected>Select mission type…</option>
+            <option>Bar / Venue Night</option>
+            <option>Private Party</option>
+            <option>Wedding Reception</option>
+            <option>Corporate Event</option>
+            <option>Festival / Outdoor</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="details">Mission Details</label>
+          <textarea id="details" placeholder="Tell us about the gig — venue size, expected crowd, set length, any requests…"></textarea>
+        </div>
+      </div>
+      <div class="form-submit">
+        <button class="btn-submit" onclick="submitForm()">Transmit Booking Request ▶</button>
+      </div>
+    </div>
+
+    <div class="form-success" id="success">
+      <div class="check">◆</div>
+      <h2 style="font-size:1.8rem;margin-bottom:.8rem">Transmission Received</h2>
+      <p>We'll be in touch within 24 hours. The mission is on.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ODDJOB</div>
+  <p class="tagline">Your license to rock · Indianapolis, IN</p>
+  <div class="footer-links">
+    <a href="https://facebook.com" target="_blank">
+      <svg class="fb-icon" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      Facebook Page
+    </a>
+    <a href="mailto:booking@oddjobband.com">
+      <svg class="fb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      booking@oddjobband.com
+    </a>
+    <a href="tel:555-007-0007">
+      <svg class="fb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.05 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (555) 007-0007
+    </a>
+  </div>
+  <p class="copyright">© 2026 Oddjob Cover Band · All Rights Reserved · Licensed to Thrill</p>
+</footer>
+
+<script>
+function submitForm() {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const venue = document.getElementById('venue').value.trim();
+  if (!name || !email || !venue) {
+    alert('Please fill in your name, email, and venue to transmit your request.');
+    return;
+  }
+  document.getElementById('booking-form').style.display = 'none';
+  const s = document.getElementById('success');
+  s.style.display = 'block';
+  s.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// Smooth nav appearance on scroll
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.style.borderBottomColor = window.scrollY > 80
+    ? 'rgba(201,168,76,.2)' : 'rgba(201,168,76,.12)';
+});
+</script>
+</body>
+</html>
