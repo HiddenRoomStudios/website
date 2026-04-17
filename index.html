@@ -1,1 +1,419 @@
-<html><head><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style type="text/css">ol{margin:0;padding:0}table td,table th{padding:0}.c0{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Arial";font-style:normal}.c1{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c3{background-color:#ffffff;max-width:468pt;padding:72pt 72pt 72pt 72pt}.c2{height:11pt}.title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}.subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}li{color:#000000;font-size:11pt;font-family:"Arial"}p{margin:0;color:#000000;font-size:11pt;font-family:"Arial"}h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}</style></head><body class="c3 doc-content"><p class="c1"><span class="c0">&lt;!DOCTYPE html&gt;</span></p><p class="c1"><span class="c0">&lt;html lang=&quot;en&quot;&gt;</span></p><p class="c1"><span class="c0">&lt;head&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;meta charset=&quot;UTF-8&quot;/&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;title&gt;Hidden Room Studios | Pro Gear. Chill Vibes.&lt;/title&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&amp;family=Barlow:wght@300;400;500&amp;display=swap&quot; rel=&quot;stylesheet&quot;/&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;style&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; :root {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --black: &nbsp; #0c0c0c;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --dark: &nbsp; &nbsp;#141414;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --panel: &nbsp; #1a1a1a;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --border: &nbsp;#2c2c2c;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --orange: &nbsp;#e8622a;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --white: &nbsp; #f2f0ec;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --muted: &nbsp; #888880;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; html { scroll-behavior: smooth; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; body {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--black);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--white);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-weight: 300;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; line-height: 1.6;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; overflow-x: hidden;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .banner {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--orange);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--black);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; text-align: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 0.6rem 1rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.85rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-weight: 600;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.15em;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; nav {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: sticky; top: 0; z-index: 100;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex; align-items: center; justify-content: space-between;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 1rem 3rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: rgba(12,12,12,0.96);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; backdrop-filter: blur(10px);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-bottom: 1px solid var(--border);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .nav-logo img {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; height: 48px; width: auto; display: block;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .nav-logo-fallback {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 1.5rem; font-weight: 700;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.08em; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--white); text-decoration: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .nav-logo-fallback span { color: var(--orange); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .nav-links { display: flex; gap: 2.5rem; list-style: none; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .nav-links a {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.9rem; font-weight: 400;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.12em; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--muted); text-decoration: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: color 0.2s;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .nav-links a:hover { color: var(--orange); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .nav-cta {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.85rem; font-weight: 600;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.12em; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--orange); color: var(--black);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 0.6rem 1.4rem; text-decoration: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: background 0.2s, transform 0.15s;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .nav-cta:hover { background: var(--white); transform: translateY(-1px); }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; #hero {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: relative;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; height: 92vh; min-height: 560px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex; align-items: flex-end;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; overflow: hidden;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--black); /* Fallback */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero-bg {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: absolute; inset: 0;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; /* FIXED PATH */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background-image: url(&#39;images/live-room.jpg&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background-size: cover; background-position: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; filter: brightness(0.45);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; animation: slowZoom 18s ease-out forwards;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; @keyframes slowZoom {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; from { transform: scale(1.04); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; to &nbsp; { transform: scale(1.0); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero-gradient {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: absolute; inset: 0;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: linear-gradient(to top, rgba(12,12,12,0.97) 0%, rgba(12,12,12,0.25) 55%, transparent 100%);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero-content {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: relative; z-index: 2;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 0 3rem 4.5rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; max-width: 820px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero-tag {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: inline-block;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.78rem; font-weight: 600;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.25em; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--orange); border: 1px solid var(--orange);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 0.3rem 0.8rem; margin-bottom: 1.2rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; opacity: 0; animation: fadeUp 0.7s 0.1s forwards;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero-title {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: clamp(3.5rem, 8vw, 7rem);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-weight: 700; line-height: 1;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.02em; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--white);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; opacity: 0; animation: fadeUp 0.7s 0.25s forwards;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero-title span { color: var(--orange); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero-sub {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-top: 1.2rem; font-size: 1.05rem; font-weight: 300;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--muted); max-width: 480px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; opacity: 0; animation: fadeUp 0.7s 0.4s forwards;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero-actions {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; opacity: 0; animation: fadeUp 0.7s 0.55s forwards;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .btn-primary {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.9rem; font-weight: 600;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.12em; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--orange); color: var(--black);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 0.85rem 2rem; text-decoration: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: background 0.2s, transform 0.15s; display: inline-block;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .btn-primary:hover { background: var(--white); transform: translateY(-2px); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .btn-ghost {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.9rem; font-weight: 600;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.12em; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: transparent; color: var(--white);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 0.85rem 2rem; text-decoration: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border: 1px solid var(--border);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: border-color 0.2s, color 0.2s, transform 0.15s; display: inline-block;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .btn-ghost:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-2px); }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .studio-strip {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: grid; grid-template-columns: repeat(3, 1fr);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; height: 200px; overflow: hidden;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--black);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .strip-img { overflow: hidden; position: relative; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .strip-img img {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; width: 100%; height: 100%; object-fit: cover;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; filter: brightness(0.55) saturate(0.8);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: filter 0.4s, transform 0.5s; display: block;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .strip-img:hover img { filter: brightness(0.8) saturate(1); transform: scale(1.05); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .strip-label {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: absolute; bottom: 0.7rem; left: 1rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.72rem; font-weight: 600;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.18em; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--white); opacity: 0.75;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; #services { padding: 6rem 3rem; background: var(--dark); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .section-eyebrow {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.78rem; font-weight: 600;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.28em; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--orange); margin-bottom: 0.6rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .section-title {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: clamp(2rem, 4vw, 3.2rem);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-weight: 700; letter-spacing: 0.04em;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; text-transform: uppercase; color: var(--white);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-bottom: 3rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .services-grid {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: grid; grid-template-columns: repeat(3, 1fr);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; gap: 1px; background: var(--border); border: 1px solid var(--border);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .service-card {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--panel); padding: 2.5rem 2rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: relative; overflow: hidden; transition: background 0.3s;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .service-card::after {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; content: &#39;&#39;; position: absolute;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; bottom: 0; left: 0; right: 0; height: 3px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--orange);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transform: scaleX(0); transform-origin: left;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: transform 0.4s ease;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .service-card:hover::after { transform: scaleX(1); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .service-card:hover { background: #1f1f1f; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .service-name {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 1.6rem; font-weight: 700;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.05em; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--white); margin-bottom: 0.8rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .service-desc {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.9rem; font-weight: 300;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--muted); line-height: 1.7;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .cta-band {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--orange); padding: 3rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex; align-items: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; justify-content: space-between; gap: 2rem; flex-wrap: wrap;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .cta-text {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: clamp(1.5rem, 3vw, 2.2rem);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-weight: 700; letter-spacing: 0.04em;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; text-transform: uppercase; color: var(--black);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .cta-text span {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: block; font-weight: 400;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.72em; opacity: 0.65; margin-top: 0.2rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .btn-dark {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.9rem; font-weight: 600;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.12em; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--black); color: var(--white);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 0.85rem 2rem; text-decoration: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; white-space: nowrap; transition: background 0.2s; display: inline-block;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .btn-dark:hover { background: #222; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; #contact { padding: 6rem 3rem; background: var(--black); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .contact-wrap {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: grid; grid-template-columns: 1fr 1.6fr;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; gap: 5rem; align-items: start;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .contact-info p {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.95rem; color: var(--muted);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; line-height: 1.75; margin-bottom: 1.5rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .contact-detail { display: flex; flex-direction: column; gap: 0.8rem; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .contact-detail a {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.85rem; font-weight: 600;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.1em; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--orange); text-decoration: none; transition: color 0.2s;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .contact-detail a:hover { color: var(--white); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .form-wrap {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--panel);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border: 1px solid var(--border);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; overflow: hidden;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .form-wrap iframe { width: 100%; border: none; display: block; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; footer {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 2rem 3rem; background: var(--dark);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-top: 1px solid var(--border);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex; align-items: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; justify-content: space-between; flex-wrap: wrap; gap: 1rem;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .footer-logo {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 1.1rem; font-weight: 700;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .footer-logo span { color: var(--orange); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .footer-links a {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Barlow Condensed&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 0.78rem; font-weight: 400;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; letter-spacing: 0.14em; text-transform: uppercase;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--muted); text-decoration: none; transition: color 0.2s;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .footer-links a:hover { color: var(--orange); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .footer-copy { font-size: 0.75rem; color: var(--muted); }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; @keyframes fadeUp {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; from { opacity: 0; transform: translateY(18px); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; to &nbsp; { opacity: 1; transform: translateY(0); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; @media (max-width: 860px) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; nav { padding: 1rem 1.5rem; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .nav-links { display: none; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero-content { padding: 0 1.5rem 3rem; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .studio-strip { grid-template-columns: 1fr 1fr; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .studio-strip .strip-img:last-child { display: none; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; #services { padding: 4rem 1.5rem; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .services-grid { grid-template-columns: 1fr; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .cta-band { padding: 2rem 1.5rem; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; #contact { padding: 4rem 1.5rem; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &lt;/style&gt;</span></p><p class="c1"><span class="c0">&lt;/head&gt;</span></p><p class="c1"><span class="c0">&lt;body&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;div class=&quot;banner&quot;&gt;&#127899;&#65039; Site under construction &mdash; more coming soon.&lt;/div&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;nav&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;a href=&quot;#hero&quot; class=&quot;nav-logo&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;img src=&quot;images/hidden-room-logo.png&quot; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;alt=&quot;Hidden Room Studios&quot; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;onerror=&quot;this.style.display=&#39;none&#39;; this.insertAdjacentHTML(&#39;afterend&#39;,&#39;&lt;span class=\&#39;nav-logo-fallback\&#39;&gt;Hidden &lt;span&gt;Room&lt;/span&gt;&lt;/span&gt;&#39;)&quot;/&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;ul class=&quot;nav-links&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&quot;https://hiddenroomstudios.com/amp-alley&quot;&gt;Amp Alley&lt;/a&gt;&lt;/li&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/ul&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;a href=&quot;https://calendar.app.google/ebp7sr9Am1scRCKJ7&quot; class=&quot;nav-cta&quot; target=&quot;_blank&quot;&gt;Book a Session&lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/nav&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;section id=&quot;hero&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;hero-bg&quot;&gt;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;hero-gradient&quot;&gt;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;hero-content&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;span class=&quot;hero-tag&quot;&gt;Louisville, KY &middot; Professional Recording Studio&lt;/span&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;h1 class=&quot;hero-title&quot;&gt;Pro Gear.&lt;br/&gt;&lt;span&gt;Chill Vibes.&lt;/span&gt;&lt;/h1&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;p class=&quot;hero-sub&quot;&gt;You have the talent. You have the music. All you need is a professional recording &mdash; we&#39;ve got you covered.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;hero-actions&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=&quot;https://calendar.app.google/ebp7sr9Am1scRCKJ7&quot; class=&quot;btn-primary&quot; target=&quot;_blank&quot;&gt;Book Studio Time&lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=&quot;#contact&quot; class=&quot;btn-ghost&quot;&gt;Get in Touch&lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/section&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;div class=&quot;studio-strip&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;strip-img&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;img src=&quot;images/control-room.jpg&quot; alt=&quot;Control Room&quot;/&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;span class=&quot;strip-label&quot;&gt;Control Room&lt;/span&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;strip-img&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;img src=&quot;images/close-up-mic.jpg&quot; alt=&quot;Dead Room&quot;/&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;span class=&quot;strip-label&quot;&gt;Dead Room&lt;/span&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;strip-img&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;img src=&quot;images/moving-shot-live-room.jpg&quot; alt=&quot;Live Room&quot;/&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;span class=&quot;strip-label&quot;&gt;Live Room&lt;/span&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/div&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;section id=&quot;services&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;p class=&quot;section-eyebrow&quot;&gt;What We Do&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;h2 class=&quot;section-title&quot;&gt;Studio Services&lt;/h2&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;services-grid&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;service-card&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h3 class=&quot;service-name&quot;&gt;Recording&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p class=&quot;service-desc&quot;&gt;Excellent sounding rooms, top-of-the-line mics, experienced engineers, and a massive amp selection. Show up and play &mdash; we&#39;ll handle the rest.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;service-card&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h3 class=&quot;service-name&quot;&gt;Mixing&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p class=&quot;service-desc&quot;&gt;Professional on-staff engineers with countless credits. We work closely with every artist to find the exact sound your music deserves.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;service-card&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h3 class=&quot;service-name&quot;&gt;Mastering&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p class=&quot;service-desc&quot;&gt;A unique blend of digital and analog mastering. Your music will stand out on any format, anywhere.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/section&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;div class=&quot;cta-band&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;cta-text&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; Ready to make your best recording yet?</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;span&gt;Let&#39;s talk about your project.&lt;/span&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;a href=&quot;https://calendar.app.google/ebp7sr9Am1scRCKJ7&quot; class=&quot;btn-dark&quot; target=&quot;_blank&quot;&gt;Book a Call &rarr;&lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/div&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;section id=&quot;contact&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;contact-wrap&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;contact-info&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p class=&quot;section-eyebrow&quot;&gt;Get in Touch&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h2 class=&quot;section-title&quot;&gt;Info Request&lt;/h2&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Ready to start your project? Fill out the form and we&#39;ll be in touch to talk through everything &mdash; from room bookings to full production packages.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Hidden Room welcomes all people from all walks of life.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;contact-detail&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=&quot;mailto:patrick@hiddenroomstudios.com&quot;&gt;patrick@hiddenroomstudios.com&lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=&quot;https://hiddenroomstudios.com/amp-alley&quot;&gt;Amp Alley &mdash; IR Library&lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=&quot;https://calendar.app.google/ebp7sr9Am1scRCKJ7&quot; target=&quot;_blank&quot;&gt;Book a Call&lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;form-wrap&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;iframe</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; src=&quot;https://docs.google.com/forms/d/e/1FAIpQLSe8MTj7gTvNNrlh7-LWx4OE2lWkfvAkXFwETkCJuYmyagKAAg/viewform?embedded=true&quot;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height=&quot;920&quot;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; loading=&quot;lazy&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Loading form&hellip;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/iframe&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/section&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;footer&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;span class=&quot;footer-logo&quot;&gt;Hidden &lt;span&gt;Room&lt;/span&gt; Studios&lt;/span&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;ul class=&quot;footer-links&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&quot;#hero&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&quot;https://hiddenroomstudios.com/amp-alley&quot;&gt;Amp Alley&lt;/a&gt;&lt;/li&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&quot;https://calendar.app.google/ebp7sr9Am1scRCKJ7&quot; target=&quot;_blank&quot;&gt;Book a Call&lt;/a&gt;&lt;/li&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/ul&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;span class=&quot;footer-copy&quot;&gt;&copy; 2025 Last Horizon LLC &middot; Hidden Room Studios &middot; Louisville, KY&lt;/span&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/footer&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&lt;/body&gt;</span></p><p class="c1"><span class="c0">&lt;/html&gt;</span></p><p class="c1 c2"><span class="c0"></span></p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hidden Room Studios | Pro Gear. Chill Vibes.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0c0c0c;
+      --dark:    #141414;
+      --panel:   #1a1a1a;
+      --border:  #2c2c2c;
+      --orange:  #e8622a;
+      --white:   #f2f0ec;
+      --muted:   #888880;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .banner {
+      background: var(--orange);
+      color: var(--black);
+      text-align: center;
+      padding: 0.6rem 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 3rem;
+      background: rgba(12,12,12,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo img {
+      height: 48px; width: auto; display: block;
+    }
+    .nav-logo-fallback {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--white); text-decoration: none;
+    }
+    .nav-logo-fallback span { color: var(--orange); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem; font-weight: 400;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      background: var(--orange); color: var(--black);
+      padding: 0.6rem 1.4rem; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--white); transform: translateY(-1px); }
+
+    #hero {
+      position: relative;
+      height: 92vh; min-height: 560px;
+      display: flex; align-items: flex-end;
+      overflow: hidden;
+      background: var(--black); /* Fallback */
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      /* FIXED PATH */
+      background-image: url('images/live-room.jpg');
+      background-size: cover; background-position: center;
+      filter: brightness(0.45);
+      animation: slowZoom 18s ease-out forwards;
+    }
+    @keyframes slowZoom {
+      from { transform: scale(1.04); }
+      to   { transform: scale(1.0); }
+    }
+    .hero-gradient {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(12,12,12,0.97) 0%, rgba(12,12,12,0.25) 55%, transparent 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 3rem 4.5rem;
+      max-width: 820px;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--orange); border: 1px solid var(--orange);
+      padding: 0.3rem 0.8rem; margin-bottom: 1.2rem;
+      opacity: 0; animation: fadeUp 0.7s 0.1s forwards;
+    }
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 700; line-height: 1;
+      letter-spacing: 0.02em; text-transform: uppercase;
+      color: var(--white);
+      opacity: 0; animation: fadeUp 0.7s 0.25s forwards;
+    }
+    .hero-title span { color: var(--orange); }
+    .hero-sub {
+      margin-top: 1.2rem; font-size: 1.05rem; font-weight: 300;
+      color: var(--muted); max-width: 480px;
+      opacity: 0; animation: fadeUp 0.7s 0.4s forwards;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.7s 0.55s forwards;
+    }
+    .btn-primary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      background: var(--orange); color: var(--black);
+      padding: 0.85rem 2rem; text-decoration: none;
+      transition: background 0.2s, transform 0.15s; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--white); transform: translateY(-2px); }
+    .btn-ghost {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      background: transparent; color: var(--white);
+      padding: 0.85rem 2rem; text-decoration: none;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, color 0.2s, transform 0.15s; display: inline-block;
+    }
+    .btn-ghost:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-2px); }
+
+    .studio-strip {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      height: 200px; overflow: hidden;
+      background: var(--black);
+    }
+    .strip-img { overflow: hidden; position: relative; }
+    .strip-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: brightness(0.55) saturate(0.8);
+      transition: filter 0.4s, transform 0.5s; display: block;
+    }
+    .strip-img:hover img { filter: brightness(0.8) saturate(1); transform: scale(1.05); }
+    .strip-label {
+      position: absolute; bottom: 0.7rem; left: 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--white); opacity: 0.75;
+    }
+
+    #services { padding: 6rem 3rem; background: var(--dark); }
+    .section-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700; letter-spacing: 0.04em;
+      text-transform: uppercase; color: var(--white);
+      margin-bottom: 3rem;
+    }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
+    }
+    .service-card {
+      background: var(--panel); padding: 2.5rem 2rem;
+      position: relative; overflow: hidden; transition: background 0.3s;
+    }
+    .service-card::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0; right: 0; height: 3px;
+      background: var(--orange);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-card:hover { background: #1f1f1f; }
+    .service-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.6rem; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--white); margin-bottom: 0.8rem;
+    }
+    .service-desc {
+      font-size: 0.9rem; font-weight: 300;
+      color: var(--muted); line-height: 1.7;
+    }
+
+    .cta-band {
+      background: var(--orange); padding: 3rem;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+    }
+    .cta-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700; letter-spacing: 0.04em;
+      text-transform: uppercase; color: var(--black);
+    }
+    .cta-text span {
+      display: block; font-weight: 400;
+      font-size: 0.72em; opacity: 0.65; margin-top: 0.2rem;
+    }
+    .btn-dark {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      background: var(--black); color: var(--white);
+      padding: 0.85rem 2rem; text-decoration: none;
+      white-space: nowrap; transition: background 0.2s; display: inline-block;
+    }
+    .btn-dark:hover { background: #222; }
+
+    #contact { padding: 6rem 3rem; background: var(--black); }
+    .contact-wrap {
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: 5rem; align-items: start;
+    }
+    .contact-info p {
+      font-size: 0.95rem; color: var(--muted);
+      line-height: 1.75; margin-bottom: 1.5rem;
+    }
+    .contact-detail { display: flex; flex-direction: column; gap: 0.8rem; }
+    .contact-detail a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--orange); text-decoration: none; transition: color 0.2s;
+    }
+    .contact-detail a:hover { color: var(--white); }
+    .form-wrap {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .form-wrap iframe { width: 100%; border: none; display: block; }
+
+    footer {
+      padding: 2rem 3rem; background: var(--dark);
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--white);
+    }
+    .footer-logo span { color: var(--orange); }
+    .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+    .footer-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem; font-weight: 400;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 860px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero-content { padding: 0 1.5rem 3rem; }
+      .studio-strip { grid-template-columns: 1fr 1fr; }
+      .studio-strip .strip-img:last-child { display: none; }
+      #services { padding: 4rem 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .cta-band { padding: 2rem 1.5rem; }
+      #contact { padding: 4rem 1.5rem; }
+      .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">🎛️ Site under construction — more coming soon.</div>
+
+  <nav>
+    <a href="#hero" class="nav-logo">
+      <img src="images/hidden-room-logo.png" 
+           alt="Hidden Room Studios" 
+           onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span class=\'nav-logo-fallback\'>Hidden <span>Room</span></span>')"/>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://hiddenroomstudios.com/amp-alley">Amp Alley</a></li>
+    </ul>
+    <a href="https://calendar.app.google/ebp7sr9Am1scRCKJ7" class="nav-cta" target="_blank">Book a Session</a>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Louisville, KY · Professional Recording Studio</span>
+      <h1 class="hero-title">Pro Gear.<br/><span>Chill Vibes.</span></h1>
+      <p class="hero-sub">You have the talent. You have the music. All you need is a professional recording — we've got you covered.</p>
+      <div class="hero-actions">
+        <a href="https://calendar.app.google/ebp7sr9Am1scRCKJ7" class="btn-primary" target="_blank">Book Studio Time</a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="studio-strip">
+    <div class="strip-img">
+      <img src="images/control-room.jpg" alt="Control Room"/>
+      <span class="strip-label">Control Room</span>
+    </div>
+    <div class="strip-img">
+      <img src="images/close-up-mic.jpg" alt="Dead Room"/>
+      <span class="strip-label">Dead Room</span>
+    </div>
+    <div class="strip-img">
+      <img src="images/moving-shot-live-room.jpg" alt="Live Room"/>
+      <span class="strip-label">Live Room</span>
+    </div>
+  </div>
+
+  <section id="services">
+    <p class="section-eyebrow">What We Do</p>
+    <h2 class="section-title">Studio Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3 class="service-name">Recording</h3>
+        <p class="service-desc">Excellent sounding rooms, top-of-the-line mics, experienced engineers, and a massive amp selection. Show up and play — we'll handle the rest.</p>
+      </div>
+      <div class="service-card">
+        <h3 class="service-name">Mixing</h3>
+        <p class="service-desc">Professional on-staff engineers with countless credits. We work closely with every artist to find the exact sound your music deserves.</p>
+      </div>
+      <div class="service-card">
+        <h3 class="service-name">Mastering</h3>
+        <p class="service-desc">A unique blend of digital and analog mastering. Your music will stand out on any format, anywhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="cta-text">
+      Ready to make your best recording yet?
+      <span>Let's talk about your project.</span>
+    </div>
+    <a href="https://calendar.app.google/ebp7sr9Am1scRCKJ7" class="btn-dark" target="_blank">Book a Call →</a>
+  </div>
+
+  <section id="contact">
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <p class="section-eyebrow">Get in Touch</p>
+        <h2 class="section-title">Info Request</h2>
+        <p>Ready to start your project? Fill out the form and we'll be in touch to talk through everything — from room bookings to full production packages.</p>
+        <p>Hidden Room welcomes all people from all walks of life.</p>
+        <div class="contact-detail">
+          <a href="mailto:patrick@hiddenroomstudios.com">patrick@hiddenroomstudios.com</a>
+          <a href="https://hiddenroomstudios.com/amp-alley">Amp Alley — IR Library</a>
+          <a href="https://calendar.app.google/ebp7sr9Am1scRCKJ7" target="_blank">Book a Call</a>
+        </div>
+      </div>
+      <div class="form-wrap">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSe8MTj7gTvNNrlh7-LWx4OE2lWkfvAkXFwETkCJuYmyagKAAg/viewform?embedded=true"
+          height="920"
+          loading="lazy">
+          Loading form…
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">Hidden <span>Room</span> Studios</span>
+    <ul class="footer-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="https://hiddenroomstudios.com/amp-alley">Amp Alley</a></li>
+      <li><a href="https://calendar.app.google/ebp7sr9Am1scRCKJ7" target="_blank">Book a Call</a></li>
+    </ul>
+    <span class="footer-copy">© 2025 Last Horizon LLC · Hidden Room Studios · Louisville, KY</span>
+  </footer>
+
+</body>
+</html>
