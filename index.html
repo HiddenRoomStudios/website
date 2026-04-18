@@ -13,7 +13,7 @@
       --dark:    #141414;
       --panel:   #1a1a1a;
       --border:  #2c2c2c;
-      --orange:  #e8622a;
+      --orange:  #EB6A56;
       --white:   #f2f0ec;
       --muted:   #888880;
     }
@@ -49,9 +49,7 @@
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo img {
-      height: 48px; width: auto; display: block;
-    }
+    .nav-logo img { height: 48px; width: auto; display: block; }
     .nav-logo-fallback {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 1.5rem; font-weight: 700;
@@ -83,11 +81,10 @@
       height: 92vh; min-height: 560px;
       display: flex; align-items: flex-end;
       overflow: hidden;
-      background: var(--black); /* Fallback */
+      background: var(--black);
     }
     .hero-bg {
       position: absolute; inset: 0;
-      /* FIXED PATH */
       background-image: url('images/live-room.jpg');
       background-size: cover; background-position: center;
       filter: brightness(0.45);
@@ -166,11 +163,22 @@
     }
     .strip-img:hover img { filter: brightness(0.8) saturate(1); transform: scale(1.05); }
     .strip-label {
-      position: absolute; bottom: 0.7rem; left: 1rem;
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 1.8rem 1rem 0.7rem;
+      background: linear-gradient(to top, rgba(12,12,12,0.85) 0%, transparent 100%);
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.72rem; font-weight: 600;
+    }
+    .strip-label strong {
+      display: block;
+      font-size: 0.82rem; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--white); opacity: 0.75;
+      color: var(--white);
+    }
+    .strip-label span {
+      display: block;
+      font-size: 0.68rem; font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--muted); margin-top: 0.1rem;
     }
 
     #services { padding: 6rem 3rem; background: var(--dark); }
@@ -308,12 +316,12 @@
 </head>
 <body>
 
-  <div class="banner">🎛️ Site under construction — more coming soon.</div>
+  <div class="banner">🎛️ Site under construction — more coming soon. We're still here and ready to work!</div>
 
   <nav>
     <a href="#hero" class="nav-logo">
-      <img src="images/hidden-room-logo.png" 
-           alt="Hidden Room Studios" 
+      <img src="images/hidden-room-logo.png"
+           alt="Hidden Room Studios"
            onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span class=\'nav-logo-fallback\'>Hidden <span>Room</span></span>')"/>
     </a>
     <ul class="nav-links">
@@ -321,18 +329,18 @@
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://hiddenroomstudios.com/amp-alley">Amp Alley</a></li>
     </ul>
-    <a href="https://calendar.app.google/ebp7sr9Am1scRCKJ7" class="nav-cta" target="_blank">Book a Session</a>
+    <a href="https://calendar.google.com/calendar/u/0/appointments/AcZssZ0b3VxklcEsAZzlNpEve_dV092a7D-bDetHaqE=" class="nav-cta" target="_blank">Book a Session</a>
   </nav>
 
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-gradient"></div>
     <div class="hero-content">
-      <span class="hero-tag">Louisville, KY · Professional Recording Studio</span>
+      <span class="hero-tag">Professional Recording Studio</span>
       <h1 class="hero-title">Pro Gear.<br/><span>Chill Vibes.</span></h1>
       <p class="hero-sub">You have the talent. You have the music. All you need is a professional recording — we've got you covered.</p>
       <div class="hero-actions">
-        <a href="https://calendar.app.google/ebp7sr9Am1scRCKJ7" class="btn-primary" target="_blank">Book Studio Time</a>
+        <a href="https://calendar.google.com/calendar/u/0/appointments/AcZssZ0b3VxklcEsAZzlNpEve_dV092a7D-bDetHaqE=" class="btn-primary" target="_blank">Book Studio Time</a>
         <a href="#contact" class="btn-ghost">Get in Touch</a>
       </div>
     </div>
@@ -340,16 +348,25 @@
 
   <div class="studio-strip">
     <div class="strip-img">
+      <img src="images/live-room.jpg" alt="Live Room"/>
+      <div class="strip-label">
+        <strong>Live Room</strong>
+        <span>A good-sized studio space</span>
+      </div>
+    </div>
+    <div class="strip-img">
       <img src="images/control-room.jpg" alt="Control Room"/>
-      <span class="strip-label">Control Room</span>
+      <div class="strip-label">
+        <strong>Control Room</strong>
+        <span>State-of-the-art control room</span>
+      </div>
     </div>
     <div class="strip-img">
       <img src="images/close-up-mic.jpg" alt="Dead Room"/>
-      <span class="strip-label">Dead Room</span>
-    </div>
-    <div class="strip-img">
-      <img src="images/moving-shot-live-room.jpg" alt="Live Room"/>
-      <span class="strip-label">Live Room</span>
+      <div class="strip-label">
+        <strong>Dead Room</strong>
+        <span>A quiet space for vocals</span>
+      </div>
     </div>
   </div>
 
@@ -359,11 +376,11 @@
     <div class="services-grid">
       <div class="service-card">
         <h3 class="service-name">Recording</h3>
-        <p class="service-desc">Excellent sounding rooms, top-of-the-line mics, experienced engineers, and a massive amp selection. Show up and play — we'll handle the rest.</p>
+        <p class="service-desc">Excellent sounding rooms, top-of-the-line mics, experienced engineers, and a unique amp selection. Show up and play — we'll handle the rest.</p>
       </div>
       <div class="service-card">
         <h3 class="service-name">Mixing</h3>
-        <p class="service-desc">Professional on-staff engineers with countless credits. We work closely with every artist to find the exact sound your music deserves.</p>
+        <p class="service-desc">Professional on-staff engineers. We work closely with every artist to find the exact sound your music deserves.</p>
       </div>
       <div class="service-card">
         <h3 class="service-name">Mastering</h3>
@@ -374,10 +391,10 @@
 
   <div class="cta-band">
     <div class="cta-text">
-      Ready to make your best recording yet?
+      Ready to hit record?
       <span>Let's talk about your project.</span>
     </div>
-    <a href="https://calendar.app.google/ebp7sr9Am1scRCKJ7" class="btn-dark" target="_blank">Book a Call →</a>
+    <a href="https://calendar.app.google/ebp7sr9Am1scRCKJ7" class="btn-dark" target="_blank">Book a Call &rarr;</a>
   </div>
 
   <section id="contact">
@@ -389,7 +406,7 @@
         <p>Hidden Room welcomes all people from all walks of life.</p>
         <div class="contact-detail">
           <a href="mailto:patrick@hiddenroomstudios.com">patrick@hiddenroomstudios.com</a>
-          <a href="https://hiddenroomstudios.com/amp-alley">Amp Alley — IR Library</a>
+          <a href="https://hiddenroomstudios.com/amp-alley">Amp Alley &mdash; IR Library</a>
           <a href="https://calendar.app.google/ebp7sr9Am1scRCKJ7" target="_blank">Book a Call</a>
         </div>
       </div>
@@ -398,7 +415,7 @@
           src="https://docs.google.com/forms/d/e/1FAIpQLSe8MTj7gTvNNrlh7-LWx4OE2lWkfvAkXFwETkCJuYmyagKAAg/viewform?embedded=true"
           height="920"
           loading="lazy">
-          Loading form…
+          Loading form&hellip;
         </iframe>
       </div>
     </div>
@@ -412,7 +429,7 @@
       <li><a href="https://hiddenroomstudios.com/amp-alley">Amp Alley</a></li>
       <li><a href="https://calendar.app.google/ebp7sr9Am1scRCKJ7" target="_blank">Book a Call</a></li>
     </ul>
-    <span class="footer-copy">© 2025 Last Horizon LLC · Hidden Room Studios · Louisville, KY</span>
+    <span class="footer-copy">&copy; 2025 Last Horizon LLC &middot; Hidden Room Studios &middot; Louisville, KY</span>
   </footer>
 
 </body>
