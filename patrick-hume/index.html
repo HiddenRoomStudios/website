@@ -308,36 +308,99 @@
       margin: 0 auto;
     }
 
-    .lessons-subjects {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--rule);
-      border: 1px solid var(--rule);
-      margin: 32px 0 40px;
+    .lessons-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0 40px;
     }
 
-    @media (max-width: 580px) { .lessons-subjects { grid-template-columns: 1fr 1fr; } }
-
-    .ls-cell {
-      background: var(--bg);
-      padding: 20px 16px;
-      text-align: center;
+    .lessons-format {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--accent);
+      padding: 5px 14px;
     }
 
-    .ls-title {
-      font-family: var(--serif);
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 4px;
+    .lessons-format-divider {
+      font-size: 13px;
+      color: var(--ink-muted);
     }
 
-    .ls-sub {
+    .lessons-format-note {
       font-size: 11px;
       font-weight: 300;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       color: var(--ink-muted);
+      margin-left: 4px;
+    }
+
+    .lessons-block {
+      margin-bottom: 36px;
+    }
+
+    .lessons-block-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .lessons-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .lessons-list li {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--rule);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .lessons-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 12px;
+    }
+
+    .lessons-avail {
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+
+    .lessons-avail-head {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .lessons-avail p:last-child {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--ink-mid);
+      margin: 0;
     }
 
     /* FORM */
@@ -614,42 +677,59 @@
   <!-- LESSONS -->
   <section id="lessons" class="lessons-section">
     <div class="lessons-inner">
-      <p class="section-label">Private Lessons</p>
-      <h2>Instruction rooted in 23 years of practice.</h2>
-      <p style="font-size:15px; line-height:1.85; color:var(--ink-mid); max-width:560px;">
-        Lessons are customized to your goals, background, and learning style. Beginners are welcome. Students pursuing a professional path are encouraged.
-      </p>
 
-      <div class="lessons-subjects">
-        <div class="ls-cell">
-          <div class="ls-title">Guitar</div>
-          <div class="ls-sub">All Styles</div>
-        </div>
-        <div class="ls-cell">
-          <div class="ls-title">Songwriting</div>
-          <div class="ls-sub">Structure &amp; Craft</div>
-        </div>
-        <div class="ls-cell">
-          <div class="ls-title">Home Recording</div>
-          <div class="ls-sub">DAW &amp; Signal Flow</div>
-        </div>
-        <div class="ls-cell">
-          <div class="ls-title">Production</div>
-          <div class="ls-sub">Arrangement &amp; Mix</div>
-        </div>
+      <p class="section-label">Private Guitar Lessons</p>
+
+      <h2>Personalized instruction from a working musician with 23 years of teaching experience.</h2>
+
+      <div class="lessons-meta">
+        <span class="lessons-format">Online</span>
+        <span class="lessons-format-divider">+</span>
+        <span class="lessons-format">In-Person</span>
+        <span class="lessons-format-note">Louisville, KY</span>
       </div>
 
+      <!-- WHAT -->
+      <div class="lessons-block">
+        <p class="lessons-block-label">What We Can Work On</p>
+        <ul class="lessons-list">
+          <li>Guitar — all styles, all levels</li>
+          <li>Songwriting — structure, melody, and craft</li>
+          <li>Home recording and DAW fundamentals</li>
+          <li>Music production and arrangement</li>
+          <li>Music theory and ear training</li>
+        </ul>
+      </div>
+
+      <!-- WHO -->
+      <div class="lessons-block">
+        <p class="lessons-block-label">Who Lessons Are For</p>
+        <ul class="lessons-list">
+          <li>Adult beginners ready to finally start</li>
+          <li>Intermediate players who feel stuck</li>
+          <li>Younger musicians pursuing a serious path</li>
+          <li>Anyone who wants to record or produce their own music</li>
+        </ul>
+      </div>
+
+      <!-- AVAILABILITY -->
+      <div class="lessons-avail">
+        <p class="lessons-avail-head">Currently accepting a limited number of new students.</p>
+        <p>Monday online lessons are currently the easiest availability to accommodate. Limited in-person availability is also available. Contact me to discuss lessons and scheduling.</p>
+      </div>
+
+      <!-- FORM -->
       <form
         class="inquiry-form"
         action="https://formspree.io/f/mgodlrry"
         method="POST"
       >
         <div class="form-row">
-          <input type="text"  name="name"  placeholder="Full name"      required />
-          <input type="email" name="email" placeholder="Email address"  required />
+          <input type="text"  name="name"  placeholder="Full name"     required />
+          <input type="email" name="email" placeholder="Email address" required />
         </div>
         <div class="form-row">
-          <input type="tel"  name="phone" placeholder="Phone (optional)" />
+          <input type="tel" name="phone" placeholder="Phone (optional)" />
           <select name="interest" required>
             <option value="" disabled selected>Area of interest</option>
             <option value="guitar">Guitar</option>
@@ -661,10 +741,11 @@
             <option value="other">Other / Not Sure Yet</option>
           </select>
         </div>
-        <textarea name="message" placeholder="Tell me about where you are in your musical journey and what you'd like to work on."></textarea>
+        <textarea name="message" placeholder="Tell me a bit about where you are and what you'd like to work on."></textarea>
         <p class="form-note">You'll receive a response within 1–2 business days.</p>
-        <button type="submit" class="btn-submit">Send Inquiry</button>
+        <button type="submit" class="btn-submit">Get Started</button>
       </form>
+
     </div>
   </section>
 
