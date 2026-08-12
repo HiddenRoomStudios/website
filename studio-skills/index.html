@@ -123,8 +123,18 @@
   }
 
   /* IMAGES */
-<img src="images/control-room-2.jpg" alt="...">
-  <img src="images/patrick-hume.png" alt="...">
+  .img-slot{
+    background:var(--cream-2);
+    border:1px dashed var(--gold);
+    color:#8a8776;
+    font-size:0.85rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+  }
+  .img-slot img{width:100%;height:100%;object-fit:cover;display:block;}
   .hero-img{
     max-width:640px;
     height:340px;
@@ -330,7 +340,9 @@
     <p class="desc">One-on-one recording, mixing, and production instruction with Patrick Hume at Hidden Room Studios.</p>
     <p class="bold-line">Bring your own project. We'll work on the actual music you're making.</p>
 
-    <div class="img-slot hero-img"><!-- IMAGE: hero-studio.jpg — wide shot of the studio/console, ~1280x680px -->Hero image: studio/console shot</div>
+    <div class="img-slot hero-img">
+      <img src="/images/control-room-2.jpg" alt="Hidden Room Studios control room">
+    </div>
 
     <div class="price-tag">90 minutes — <span class="amount">$90</span></div>
     <div><a href="#book" class="btn">Book a Studio Skills Session</a></div>
@@ -397,7 +409,9 @@
   <div class="wrap">
     <span class="eyebrow">About Patrick</span>
     <h3>Patrick Hume</h3>
-    <div class="img-slot about-photo"><!-- IMAGE: patrick-hume.png — square headshot, ~400x400px --></div>
+    <div class="img-slot about-photo">
+      <img src="/images/patrick-hume.png" alt="Patrick Hume">
+    </div>
     <p>I've been teaching guitar and music for more than 23 years and have spent my career working as a musician, composer, recording engineer, and producer. I operate Hidden Room Studios, where I record, mix, and produce music for artists.</p>
     <p>Studio Skills combines that real-world experience with the thing I enjoy most about teaching: helping someone understand <em>why</em> something works.</p>
     <div class="about-clear"></div>
